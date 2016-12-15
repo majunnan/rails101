@@ -37,13 +37,13 @@ def update
   end
 
   def destroy
+    @group = Group.find(params[:id])
     @group.destroy
-    redirect_to groups_path, alert: "Group deleted"
+    flash[:alert] = "Group deleted"
+    redirect_to groups_path
   end
 
-    @group.destroy
-    redirect_to groups_path, alert: "Group deleted"
-  end
+
 
 private
 
@@ -58,5 +58,4 @@ def find_group_and_check_permission
  def group_params
    params.require(:group).permit(:title, :description)
  end
-
-end
+ end
