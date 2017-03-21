@@ -43,6 +43,12 @@ group :development, :test do
 end
 
 group :development do
+  gem "capistrano", "~> 3.4"
+  gem "capistrano-rvm"
+  gem "capistrano-rails"
+end
+
+group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 group :production do
   gem "pg"
